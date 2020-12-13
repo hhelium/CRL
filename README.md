@@ -1,3 +1,1 @@
-# CRL
-
-Controlled Robot Language
+# CRL: Controlled Robot Language
