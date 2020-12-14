@@ -2,7 +2,7 @@
 
 This reporsitory contains grammar for Natural Language Interface (an extension of Controlled Natural Language, but specified for robotic applications) and its vocabulary.
 
-To understand more about the framework, please read our work in `papers`.
+To understand more about the framework, please read our work in `papers` (Updating).
 
 ## General Framework:
 
