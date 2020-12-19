@@ -1,0 +1,48 @@
+A robot runs.
+A robot runs slowly.
+John throws an apple.
+John throws an apple slowly.
+A small robot throws an apple slowly.
+A small robot throws an red apple slowly.
+A small and green robot runs slowly.
+A small and green robot throws an apple.
+John 's robot throws an apple.
+John 's robot throws an apple slowly.
+The robot of the company runs.
+The robot of the company runs slowly.
+The robot which is an agent throws an red apple slowly under the table.
+The robot which is an agent moves slowly.
+John who is an agent throws an red apple slowly.
+John who is an agent throws an red apple slowly under the table.
+The robot throws 3 kg of apples slowly.
+The robot throws 3 kg of red apples slowly.
+The robot is 3 pound of metals.
+The robot is much smaller than the red box.
+The robot is much more small than the red box.
+The robot can throw an red apple slowly.
+The robot can throw an red apple slowly under the table.
+The robot can be much smaller than the red box.
+The robot can be much more small than the red box.
+The robot can be much smaller than the red box under the table.
+The robot can be much more small than the red box under the table.
+There is no apple.
+There is no apples on the table.
+Does the robot throw 3 kg of apple slowly?
+Does the robot throw 3 kg of red apple slowly?
+Is the apple smaller than the red box?
+Is the apple more small than the red box?
+Is the apple an agent?
+Is John an agent?
+Who does move slowly?
+Who does  slowly move?
+Who is as small as the red block?
+Who is smaller than the red block?
+Who is the smallest agent?
+Who is John?
+Which robot does throw 3 kg of red apple slowly?
+Which robot does throw 3 kg of red apple slowly under the table?
+which robot is smaller than the red block?
+which robot is as small as the red block?
+which robot is John?
+Where does the robot slowly throw 3 kg of red apple ?
+Where does the robot slowly under the table throw 3 kg of red apple ?
