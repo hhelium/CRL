@@ -33,7 +33,8 @@ spacy_tag2our_tag = {
     "`": "QUOTE",
     ";": "SEMI_COLON",
     ":": "COLON",
-    "PRP$": "POS_pronoun"
+    "PRP$": "POS_pronoun",
+    "CC": "AND"
 }
 
 other_tag2our_tag = spacy_tag2our_tag
