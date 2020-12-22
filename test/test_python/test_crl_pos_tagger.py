@@ -100,12 +100,12 @@ class Test_Component_Taggers(unittest.TestCase):
                 ['A', 'robot', 'throws', 'an', 'small', 'and', 'red',
                  'apple', 'slowly', 'under', 'the', 'table', '.'],
                 ['DET', 'NN', 'VBZ', 'DET', 'JJ', 'AND', 'JJ',
-                 'NN', 'RB', 'PREP', 'DET', 'NN', 'PERIOD']
+                 'NN', 'RB', 'IN', 'DET', 'NN', 'PERIOD']
             ),
             (
                 ['A', 'robot', 'under', 'the', 'table', 'throws', 'an',
                  'small', 'and', 'red', 'apple', 'slowly', '.'],
-                ['DET', 'NN', 'PREP', 'DET', 'NN', 'VBZ', 'DET',
+                ['DET', 'NN', 'IN', 'DET', 'NN', 'VBZ', 'DET',
                  'JJ', 'AND', 'JJ', 'NN', 'RB', 'PERIOD']
             ),
             (
@@ -115,8 +115,8 @@ class Test_Component_Taggers(unittest.TestCase):
             (
                 ['The', 'robot', 'can', 'capture', 'the',
                  'red', 'apple', 'on', 'the', 'table', '.'],
-                ['DET', 'NN', 'CAN', 'VB', 'DET',
-                 'JJ', 'NN', 'PREP', 'DET', 'NN', 'PERIOD'],
+                ['DET', 'NN', 'MD', 'VB', 'DET',
+                 'JJ', 'NN', 'IN', 'DET', 'NN', 'PERIOD'],
             ),
             (
                 ['John', 'runs', '.'],
@@ -142,7 +142,7 @@ class Test_Component_Taggers(unittest.TestCase):
                 ['John', 'throws', 'an', 'red', 'apple',
                  'slowly', 'under', 'the', 'table', '.'],
                 ['NNP', 'VBZ', 'DET', 'JJ', 'NN',
-                 'RB', 'PREP', 'DET', 'NN', 'PERIOD']
+                 'RB', 'IN', 'DET', 'NN', 'PERIOD']
             ),
             (
                 ['John', 'moves', 'slowly', '.'],
