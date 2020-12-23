@@ -1,4 +1,8 @@
-import unittest
+import sys
+from pathlib import Path
+workspace_directory = Path(Path(__file__).parent.parent.parent)
+sys.path.insert(0, str(workspace_directory))
+
 from scripts.crl.pos_tagger import (
     SpacySequentialTagger,
     DynamicSequentialTagger,
@@ -6,10 +10,8 @@ from scripts.crl.pos_tagger import (
     CascadeTagger,
     word_tokenize
 )
-import sys
-from pathlib import Path
-workspace_directory = Path(Path(__file__).parent.parent.parent)
-sys.path.insert(0, str(workspace_directory))
+
+import unittest
 
 
 class Test_Component_Taggers(unittest.TestCase):
@@ -54,10 +56,279 @@ class Test_Component_Taggers(unittest.TestCase):
     def test_static_pos_tagging(self):
         inputs_ = [
             (
-                ["which"], ["WP"]
+                ["Which"], ["WHICH"]
             ),
             (
-                ["that"], ["WP"]
+                ["Who"], ["WHO"]
+            ),
+            (
+                ["Where"], ["WHERE"]
+            ),
+            (
+                ["How"], ["HOW"]
+            ),
+
+            (
+                ["That"], ["WP"]
+            ),
+
+            (
+                ["And"], ["AND"]
+            ),
+            (
+                ["Or"], ["OR"]
+            ),
+            (
+                ["As"], ["AS"],
+            ),
+            (
+                ["Than"], ["THAN"],
+            ),
+            (
+                ["Much"], ["MUCH"],
+            ),
+            (
+                ["More"], ["MORE"],
+            ),
+            (
+                ["Most"], ["MOST"],
+            ),
+            (
+                ["Tan"], ["THAN"],
+            ),
+            (
+                ["By"], ["BY"],
+            ),
+            (
+                ["There"], ["THERE"],
+            ),
+            (
+                ["?"], ["QUESTION"]
+            ),
+            (
+                ["!"], ["EXCLAM"]
+            ),
+            (
+                ["."], ["PERIOD"]
+            ),
+            (
+                [","], ["COMMA"]
+            ),
+            (
+                [":"], ["COLON"]
+            ),
+            (
+                ["To"], ["IN"]
+            ),
+            (
+                ["Among"], ["IN"]
+            ),
+            (
+                ["Over"], ["IN"]
+            ),
+            (
+                ["Back"], ["IN"]
+            ),
+            (
+                ["One"], ["IN"]
+            ),
+            (
+                ["Down"], ["IN"]
+            ),
+            (
+                ["Way"], ["IN"]
+            ),
+            (
+                ["Through"], ["IN"]
+            ),
+            (
+                ["Against"], ["IN"]
+            ),
+            (
+                ["In"], ["IN"]
+            ),
+            (
+                ["Beyond"], ["IN"]
+            ),
+            (
+                ["Open"], ["IN"]
+            ),
+            (
+                ["Between"], ["IN"]
+            ),
+            (
+                ["Out"], ["IN"]
+            ),
+            (
+                ["Even"], ["IN"]
+            ),
+            (
+                ["Aback"], ["IN"]
+            ),
+            (
+                ["From"], ["IN"]
+            ),
+            (
+                ["For"], ["IN"]
+            ),
+            (
+                ["Away"], ["IN"]
+            ),
+            (
+                ["Aside"], ["IN"]
+            ),
+            (
+                ["Behind"], ["IN"]
+            ),
+            (
+                ["Above"], ["IN"]
+            ),
+            (
+                ["Under"], ["IN"]
+            ),
+            (
+                ["Forward"], ["IN"]
+            ),
+            (
+                ["Before"], ["IN"]
+            ),
+            (
+                ["Forth"], ["IN"]
+            ),
+            (
+                ["Into"], ["IN"]
+            ),
+            (
+                ["Towards"], ["IN"]
+            ),
+            (
+                ["Around"], ["IN"]
+            ),
+            (
+                ["After"], ["IN"]
+            ),
+            (
+                ["Upon"], ["IN"]
+            ),
+            (
+                ["Along"], ["IN"]
+            ),
+            (
+                ["With"], ["IN"]
+            ),
+
+            (
+                ["Apart"], ["IN"]
+            ),
+            (
+                ["On"], ["IN"]
+            ),
+            (
+                ["About"], ["IN"]
+            ),
+            (
+                ["Off"], ["IN"]
+            ),
+            (
+                ["Ahead"], ["IN"]
+            ),
+            (
+                ["Past"], ["IN"]
+            ),
+            (
+                ["Up"], ["IN"]
+            ),
+            (
+                ["Together"], ["IN"]
+            ),
+            (
+                ["Across"], ["IN"]
+            ),
+            (
+                ["Below"], ["IN"]
+            ),
+            (
+                ["Without"], ["IN"]
+            ),
+            (
+                ["Toward"], ["IN"]
+            ),
+            (
+                ["Onto"], ["IN"]
+            ),
+            (
+                ["Round"], ["IN"]
+            ),
+            (
+                ["At"], ["IN"]
+            ),
+
+            (
+                ["of"], ["POS_of"]
+            ),
+            (
+                ["Am"], ["AUX"]
+            ),
+            (
+                ["Is"], ["AUX"]
+            ),
+            (
+                ["Are"], ["AUX"]
+            ),
+            (
+                ["Be"], ["AUX"]
+            ),
+            (
+                ["Do"], ["AUX_DO"]
+            ),
+            (
+                ["Does"], ["AUX_DO"]
+            ),
+
+            (
+                ["Please"], ["PLEASE"]
+            ),
+
+            (
+                ["No"], ["NO"]
+            ),
+
+            # * Measurement tags:
+            (
+                ["Kg"], ["MN"]
+            ),
+            (
+                ["g"], ["MN"]
+            ),
+            (
+                ["Celsius"], ["MN"]
+            ),
+            (
+                ["Fahrenheit"], ["MN"]
+            ),
+            (
+                ["ton"], ["MN"]
+            ),
+            (
+                ["cup"], ["MN"]
+            ),
+            (
+                ["degree"], ["MN"]
+            ),
+            (
+                ["minute"], ["MN"]
+            ),
+            (
+                ["hour"], ["MN"]
+            ),
+            (
+                ["qt"], ["MN"]
+            ),
+            (
+                ["lbs"], ["MN"]
+            ),
+            (
+                ["pound"], ["MN"]
             ),
         ]
         tagger = StaticSequentialTagger()
