@@ -22,6 +22,9 @@ class Test_Component_Taggers(unittest.TestCase):
                  "startup", "for", "$", "1", "billion"],
                 ["NNP", "VBZ", "VBG", "IN", "VBG",
                     "NNP", "NN", "IN", "$", "CD", "CD"]
+            ),
+            (
+                ["'s"], ["POS"]
             )
 
         ]
@@ -43,7 +46,8 @@ class Test_Component_Taggers(unittest.TestCase):
             ),
             (
                 ["moves"], ["VBZ"]
-            )
+            ),
+
         ]
         tagger = DynamicSequentialTagger()
         for i, (input_, expect_) in enumerate(inputs_):
@@ -69,7 +73,7 @@ class Test_Component_Taggers(unittest.TestCase):
             ),
 
             (
-                ["That"], ["WP"]
+                ["That"], ["THAT"]
             ),
 
             (
@@ -94,14 +98,24 @@ class Test_Component_Taggers(unittest.TestCase):
                 ["Most"], ["MOST"],
             ),
             (
-                ["Tan"], ["THAN"],
-            ),
-            (
                 ["By"], ["BY"],
             ),
             (
                 ["There"], ["THERE"],
             ),
+
+            (
+                ["If"], ["IF"],
+            ),
+
+            (
+                ["Then"], ["THEN"],
+            ),
+
+            (
+                ["Not"], ["NOT"],
+            ),
+
             (
                 ["?"], ["QUESTION"]
             ),
@@ -329,6 +343,23 @@ class Test_Component_Taggers(unittest.TestCase):
             ),
             (
                 ["pound"], ["MN"]
+            ),
+
+            # * Variables
+            (
+                ["X9"], ["VAR"]
+            ),
+            (
+                ["X"], ["VAR"]
+            ),
+            (
+                ["Y"], ["VAR"]
+            ),
+            (
+                ["Z"], ["VAR"]
+            ),
+            (
+                ["Z99"], ["VAR"]
             ),
         ]
         tagger = StaticSequentialTagger()
