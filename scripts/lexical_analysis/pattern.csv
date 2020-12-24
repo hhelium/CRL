@@ -1,0 +1,16 @@
+id,pattern_name,pattern_syntax (POS patterns),correction,Note (Explanation)
+1,Multiple noun,NN_1 NN_2,NN_2,Last noun is the main noun
+2,Multiple adv,RB_1 RB_2,RB_1 AND RB_2,
+3,Multiple adj,JJ_1 JJ_2,JJ_1 AND JJ_2,""
+4,"""Your"" pattern",YOUR Noun_Phrase,"""the user's"" Noun_Phrase",""
+5,"""You"" pattern",YOU ...,The user ...,""
+6,Verb-to-verb,"VB TO VB / VBZ TO VB ",?,""
+7,Verb-obj-to-verb,VB Noun_Phrase TO VB,?,""
+8,Verb-by-obj,VB BY Noun_Phrase,?,""
+9,Verb-Particle,VB RP,?,""
+10,"""We"" pattern",WE ...,"""Robot and the user"" ...",""
+11,"""Our"" pattern",OUR Noun_Phrase,?,""
+12,"""I"" pattern",I ...,"""The user"" ...",""
+13,"""My"" pattern",MY Noun_Phrase,"""The user's"" Noun_Phrase",""
+14,From-to,FROM CD TO CD,FROM CD MN TO CD MN,""
+15,Plural,?,?,""
