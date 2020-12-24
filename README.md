@@ -6,11 +6,14 @@ To understand more about the framework, please read our work in `papers` (Updati
 
 ## General Framework:
 
-![Framework](images/Framework.png)
+<image src="images/Framework.png" width="200">
+
+<!-- ![Framework](images/Framework.png) -->
 
 ## CRL Framework details:
 
-![CRLFramework](images/CRL_Framework.png)
+<image src="images/CRL_Framework.png" width="200">
+<!-- ![CRLFramework]() -->
 
 ## Application and Usage
 
