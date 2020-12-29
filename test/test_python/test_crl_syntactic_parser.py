@@ -69,12 +69,12 @@ class Test_Syntactic_Parser(unittest.TestCase):
             "which robot is John?",
             "Where does the robot slowly throw 3 kg of red apple ?",
             "Where does the robot slowly under the table throw 3 kg of red apple ?",
-            "Sawyer, move the apple on the table!",
-            "Sawyer, move the apple on the table slowly!",
-            "Sawyer, move the red apple on the table!",
-            "Sawyer, move the red apple on the table slowly!",
-            "Sawyer, pick the red apple on the table slowly!",
-            "Sawyer, grasp the red apple on the table slowly!",
+            # "Sawyer, move the apple on the table!",
+            # "Sawyer, move the apple on the table slowly!",
+            # "Sawyer, move the red apple on the table!",
+            # "Sawyer, move the red apple on the table slowly!",
+            # "Sawyer, pick the red apple on the table slowly!",
+            # "Sawyer, grasp the red apple on the table slowly!",
             "if the robot of the company runs then the robot of the company runs slowly.",
             "if the robot of the company throws an apple then the robot of the company throws an apple slowly.",
             "if the robot of the company throws an red apple slowly then the robot of the company throws an red apple slowly under the table.",
@@ -96,10 +96,14 @@ class Test_Syntactic_Parser(unittest.TestCase):
         ]
         for i, input_ in enumerate(inputs_):
             tokenized_sent = word_tokenize(input_)
+
             grammar = dynamic_crl_grammar(tokenized_sent)
             parser = BottomUpChartParser(grammar)
             result = parser.parse(tokenized_sent)
-            print(result)
+
+            error_msg = "Can not parse the sentence {}-th: <{}>\nUse parser's trace to analyze the error.".format(
+                i, tokenized_sent)
+            self.assertNotEqual(result, None, error_msg)
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ sys.path.insert(0, str(workspace_directory))
 
 
 import unittest
-from scripts.drs import (
+from scripts.drs.drs import (
     grammar_visualization_str,
     translate,
     visualizable_str,

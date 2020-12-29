@@ -132,7 +132,7 @@ class Test_Component_Taggers(unittest.TestCase):
                 [":"], ["COLON"]
             ),
             (
-                ["To"], ["IN"]
+                ["To"], ["TO"]
             ),
             (
                 ["Among"], ["IN"]
@@ -180,7 +180,7 @@ class Test_Component_Taggers(unittest.TestCase):
                 ["Aback"], ["IN"]
             ),
             (
-                ["From"], ["IN"]
+                ["From"], ["FROM"]
             ),
             (
                 ["For"], ["IN"]
@@ -361,6 +361,27 @@ class Test_Component_Taggers(unittest.TestCase):
             (
                 ["Z99"], ["VAR"]
             ),
+
+            # * POS used for lexical analysis
+            (
+                ["Your"], ["YOUR"]
+            ),
+            (
+                ["you"], ["YOU"]
+            ),
+
+            (
+                ["We"], ["WE"]
+            ),
+            (
+                ["Our"], ["OUR"]
+            ),
+            (
+                ["I"], ["I"]
+            ),
+            (
+                ["My"], ["MY"]
+            ),
         ]
         tagger = StaticSequentialTagger()
         for i, (input_, expect_) in enumerate(inputs_):
@@ -449,6 +470,16 @@ class Test_Component_Taggers(unittest.TestCase):
             (
                 ['John', 'moves', 'slowly', '.'],
                 ['NNP', 'VBZ', 'RB', 'PERIOD'],
+            ),
+            (
+                ['The', 'robot', 'which', 'is', 'an', 'agent', 'throws', 'an',
+                    'red', 'apple', 'slowly', 'under', 'the', 'table', '.'],
+                ['DET', 'NN', 'WHICH', 'AUX', 'DET', 'NN', 'VBZ', 'DET',
+                    'JJ', 'NN', 'RB', 'IN', 'DET', 'NN', 'PERIOD'],
+            ),
+            (
+                ['There', 'is', 'a', 'small', 'and', 'red', 'orange', '.'],
+                ["THERE", "AUX", "DET", "JJ", "AND", "JJ", "NN", "PERIOD"]
             )
             # - (
             # -     ['She', 'runs', '.'],
