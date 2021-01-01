@@ -35,16 +35,20 @@ class Test_Translation(unittest.TestCase):
             ),
             (
                 "Please move the apple.",
-                "the robot move the apple ."
+                "Sawyer , move the apple !"
             ),
             (
                 "move the apple.",
-                "the robot move the apple ."
+                "Sawyer , move the apple !"
             ),
 
             (
                 "slowly move the apple.",
-                "the robot slowly move the apple ."
+                "Sawyer , slowly move the apple !"
+            ),
+            (
+                "pick the apple on the table.",
+                "Sawyer , pick the apple on the table !"
             ),
         ]
 

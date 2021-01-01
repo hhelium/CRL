@@ -25,7 +25,7 @@ class Test_Component_Taggers(unittest.TestCase):
             ),
             (
                 ["'s"], ["POS"]
-            )
+            ),
 
         ]
         tagger = SpacySequentialTagger()
@@ -71,7 +71,18 @@ class Test_Component_Taggers(unittest.TestCase):
             (
                 ["How"], ["HOW"]
             ),
-
+            (
+                ["She"], ["SHE"]
+            ),
+            (
+                ["he"], ["HE"]
+            ),
+            (
+                ["Her"], ["HER"]
+            ),
+            (
+                ["his"], ["HIS"]
+            ),
             (
                 ["That"], ["THAT"]
             ),
@@ -469,91 +480,80 @@ class Test_Component_Taggers(unittest.TestCase):
             ),
             (
                 ['John', 'moves', 'slowly', '.'],
-                ['NNP', 'VBZ', 'RB', 'PERIOD'],
+                ['NNP', 'VBZ', 'RB', 'PERIOD']
             ),
             (
                 ['The', 'robot', 'which', 'is', 'an', 'agent', 'throws', 'an',
                     'red', 'apple', 'slowly', 'under', 'the', 'table', '.'],
                 ['DET', 'NN', 'WHICH', 'AUX', 'DET', 'NN', 'VBZ', 'DET',
-                    'JJ', 'NN', 'RB', 'IN', 'DET', 'NN', 'PERIOD'],
+                    'JJ', 'NN', 'RB', 'IN', 'DET', 'NN', 'PERIOD']
             ),
             (
                 ['There', 'is', 'a', 'small', 'and', 'red', 'orange', '.'],
                 ["THERE", "AUX", "DET", "JJ", "AND", "JJ", "NN", "PERIOD"]
-            )
-            # - (
-            # -     ['She', 'runs', '.'],
-            # - ),
-            # - (
-            # -     ['She', 'runs', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['She', 'throws', 'an', 'apple', '.'],
-            # - ),
-            # - (
-            # -     ['She', 'throws', 'an', 'apple', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['She', 'throws', 'an', 'red', 'apple', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['She', 'throws', 'an', 'red', 'apple',
-            # -      'slowly', 'under', 'the', 'table', '.'],
-            # - ),
-            # - (
-            # -     ['She', 'moves', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'robot', 'runs', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'robot', 'runs', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'robot', 'throws', 'an', 'apple', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'robot', 'throws', 'an', 'apple', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'robot', 'throws', 'an',
-            # -         'red', 'apple', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'robot', 'throws', 'an', 'red',
-            # -      'apple', 'slowly', 'under', 'the', 'table', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'robot', 'moves', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'and', 'green', 'robot', 'runs', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'and', 'green', 'robot', 'runs', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'and', 'green', 'robot',
-            # -         'throws', 'an', 'apple', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'and', 'green', 'robot',
-            # -      'throws', 'an', 'apple', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'and', 'green', 'robot', 'throws',
-            # -      'an', 'red', 'apple', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'and', 'green', 'robot', 'throws', 'an',
-            # -      'red', 'apple', 'slowly', 'under', 'the', 'table', '.'],
-            # - ),
-            # - (
-            # -     ['A', 'small', 'and', 'green', 'robot', 'moves', 'slowly', '.'],
-            # - ),
-            # - (
-            # -     ['John', "'s", 'robot', 'runs', '.'],
-            # - ),
+            ),
+            (
+                ['She', 'runs', '.'],
+                ['SHE', 'VBZ', 'PERIOD']
+            ),
+            (
+                ['She', 'runs', 'slowly', '.'],
+                ['SHE', 'VBZ', 'RB', 'PERIOD'],
+            ),
+            (
+                ['She', 'throws', 'an', 'apple', '.'],
+                ['SHE', 'VBZ', 'DET', 'NN', 'PERIOD'],
+            ),
+            (
+                ['She', 'throws', 'an', 'apple', 'slowly', '.'],
+                ['SHE', 'VBZ', 'DET', 'NN', 'RB', 'PERIOD']
+            ),
+            (
+                ['She', 'throws', 'an', 'red', 'apple', 'slowly', '.'],
+                ['SHE', 'VBZ', 'DET', 'JJ', 'NN', 'RB', 'PERIOD']
+            ),
+            (
+                ['She', 'throws', 'an', 'red', 'apple',
+                 'slowly', 'under', 'the', 'table', '.'],
+                ['SHE', 'VBZ', 'DET', 'JJ', 'NN',
+                 'RB', 'IN', 'DET', 'NN', 'PERIOD'],
+            ),
+            (
+                ['She', 'moves', 'slowly', '.'],
+                ['SHE', 'VBZ', 'RB', 'PERIOD'],
+            ),
+            (
+                ['A', 'small', 'robot', 'runs', '.'],
+                ['DET', 'JJ', 'NN', 'VBZ', 'PERIOD'],
+            ),
+            (
+                ['A', 'small', 'robot', 'runs', 'slowly', '.'],
+                ['DET', 'JJ', 'NN', 'VBZ', 'RB', 'PERIOD'],
+            ),
+            (
+                ['A', 'small', 'robot', 'throws', 'an', 'apple', '.'],
+                ['DET', 'JJ', 'NN', 'VBZ', 'DET', 'NN', 'PERIOD'],
+            ),
+            (
+                ['A', 'small', 'robot', 'throws', 'an', 'apple', 'slowly', '.'],
+                ['DET', 'JJ', 'NN', 'VBZ', 'DET', 'NN', 'RB', 'PERIOD'],
+            ),
+            (
+                ['A', 'small', 'and', 'green', 'robot',
+                    'throws', 'an', 'apple', '.'],
+                ['DET', 'JJ', 'AND', 'JJ', 'NN',
+                    'VBZ', 'DET', 'NN', 'PERIOD'],
+            ),
+            (
+                ['A', 'small', 'and', 'green', 'robot',
+                 'throws', 'an', 'apple', 'slowly', '.'],
+                ['DET', 'JJ', 'AND', 'JJ', 'NN',
+                 'VBZ', 'DET', 'NN', 'RB', 'PERIOD'],
+            ),
+            (
+                ['John', "'s", 'robot', 'runs', '.'],
+                ['NNP', "POS", 'NN', 'VBZ', 'PERIOD'],
+            ),
             # - (
             # -     ['John', "'s", 'robot', 'runs', 'slowly', '.'],
             # - ),
@@ -1100,6 +1100,14 @@ class Test_Component_Taggers(unittest.TestCase):
             # -     ['How', 'does', 'robot', 'slowly', 'under', 'the', 'table',
             # -      'throw', '3', 'kg', 'of', 'red', 'apple', '?'],
             # - )
+
+            # * Practical tests:
+            (
+                ['The', 'robot', 'asks', 'the', 'users',
+                    'to', 'enter', 'the', 'input', '.'],
+                ['DET', 'NN', 'VBZ', 'DET', 'NNS',
+                    'TO', 'VB', 'DET', 'NN', 'PERIOD'],
+            )
         ]
         tagger = CascadeTagger()
         for i, (input_, expect_) in enumerate(inputs_):
@@ -1108,11 +1116,6 @@ class Test_Component_Taggers(unittest.TestCase):
             error_msg = "Cascade's result: {} /\n Expect: {} -- at sentence {}-th --'{}'".format(
                 tags, expect_, i, input_)
             self.assertEqual(tags, expect_, error_msg)
-
-
-def helper_function(sentence):
-    split_sentence = word_tokenize(sentence)
-    print("(\n\t{},\n),".format(split_sentence))
 
 
 if __name__ == "__main__":
