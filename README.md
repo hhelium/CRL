@@ -1,4 +1,4 @@
-# CRL: Controlled Robot Language
+# Common Language: Controlled Robot Language
 
 This reporsitory contains grammar for Natural Language Interface (an extension of Controlled Natural Language, but specified for robotic applications) and its vocabulary.
 
